@@ -11,6 +11,15 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+// $router->get('/', function () use ($router) {
+//     return $router->app->version();
+// });
+
+$router->get('/produk', 'ProdukController@index');
+$router->get('/produk/{id}', 'ProdukController@show');
+$router->post('/produk', 'ProdukController@create');
+$router->put('/produk/{id}', 'ProdukController@update');
+$router->delete('/produk/{id}', 'ProdukController@destroy');
+
+$router->post('/register', 'UserController@register');
+$router->post('/login', 'UserController@login');
